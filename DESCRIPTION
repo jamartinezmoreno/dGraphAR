@@ -5,6 +5,8 @@ Authors@R:
     person("Andrés", "Martínez", , "jandres.martinez@protonmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0002-8729-1124"))
 Description: What the package does (one paragraph).
+URL: https://github.com/jamartinezmoreno/dGraphAR
+BugReports: ...
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
