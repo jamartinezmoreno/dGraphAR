@@ -20,6 +20,7 @@ Imports:
     data.table,
     ggplot2,
     igraph,
+    Matrix,
     parallel,
     stringr
 Depends: 
