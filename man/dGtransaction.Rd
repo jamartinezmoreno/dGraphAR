@@ -20,12 +20,5 @@ An S4 class in transaction format
 Convert a data.frame to transaction format
 }
 \examples{
-dat <- data.table::data.table(rbind(c(1, "milk"), c(1, "bread"), c(2, "onions"), c(3, "onions"), c(3, "beer")))
-transDat <- dGtransaction(dat, 1, 2)
-transDat
-
-transactions in sparse format with
-3 transactions (rows) and
-4 items (columns)
-
+to be written
 }
