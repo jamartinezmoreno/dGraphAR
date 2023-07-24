@@ -10,10 +10,11 @@
 #'
 plotFreqItems <- function(datFreq, topN){
 
+  require(data.table)
   n_items_to_plot <- max(min(topN, nrow(datFreq$freqTable)), 1)
 
-  datTAB <- data.table::data.table(datFreq$freqTable)
-  datTAB[, order:=1:.N]
+  datTAB <- data.table(datFreq$freqTable)
+  datTAB[, order := 1:.N]
   datTAB[, label := if(order>n_items_to_plot){"(other)"}else{item}, by=c("order")]
 
   datTAB[, label:= stringr::str_wrap(label, width = 14)]
