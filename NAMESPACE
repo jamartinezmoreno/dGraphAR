@@ -3,6 +3,7 @@
 export(dGtransaction)
 export(freqItems)
 export(plotFreqItems)
+export(rawRules)
 export(str_split_one)
 importFrom(data.table,":=")
 importFrom(data.table,.BY)
