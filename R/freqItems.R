@@ -17,8 +17,13 @@ freqItems <- function(datTrans){
                    cases = as.numeric(freq) * nTrans)
   dat_freq <- data.table::copy(listCols)
   data.table::setDT(dat_freq)
-  return(list(freqTable = dat_freq, nTransactions = nTrans))
+  output = list(freqTable = dat_freq, nTransactions = nTrans)
+  class(output) <- "dGraphAR_freq"
+  return(output)
 }
+
+
+
 
 
 
