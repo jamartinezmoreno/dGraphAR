@@ -2,4 +2,5 @@
 
 export(dGtransaction)
 export(freqItems)
+export(plotFreqItems)
 export(str_split_one)
