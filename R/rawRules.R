@@ -16,11 +16,11 @@ rawRules <- function(datTrans, minNSupport, confidence, minLen, maxLen){
 
   freqSupport <- minNSupport / dim(datTrans)[1]
 
-  rules <- arules::apriori(toSee, parameter = list(supp = freqSupport,
-                                                   conf = confidence,
-                                                   minlen = minLen,
-                                                   maxlen = maxLen,
-                                                   maxtime = 840))
+  rules <- arules::apriori(datTrans, parameter = list(supp = freqSupport,
+                                                      conf = confidence,
+                                                      minlen = minLen,
+                                                      maxlen = maxLen,
+                                                      maxtime = 840))
 
   output <- data.table::data.table(arules::inspect(rules))
   return(output)
