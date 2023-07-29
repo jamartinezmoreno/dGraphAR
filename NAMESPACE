@@ -3,6 +3,7 @@
 export(dGtransaction)
 export(extractClosed)
 export(freqItems)
+export(hyperLiftAndTests)
 export(plotFreqItems)
 export(rawRules)
 export(str_split_one)
