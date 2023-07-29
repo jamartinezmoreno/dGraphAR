@@ -22,6 +22,14 @@ rawRules <- function(datTrans, minNSupport, confidence, minLen, maxLen){
                                                       maxlen = maxLen,
                                                       maxtime = 840))
 
-  output <- data.table::data.table(arules::inspect(rules))
+  rules_dt <- data.table::data.table(arules::inspect(rules))
+  rules_dt$items <- gsub("[[:punct:]]", "", paste(rules_dt$lhs, rules_dt$rhs, sep = " "))
+
+  output = list(datRawRules = rules_dt,
+                transactions = datTrans,
+                rules = rules,
+                params = list(minNSupport = minNSupport, confidence = confidence, minLen = minLen, maxLen = maxLen))
+  class(output) <- "dGraphAR_rawRules"
+
   return(output)
 }
