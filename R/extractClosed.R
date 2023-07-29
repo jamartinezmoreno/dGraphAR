@@ -32,6 +32,6 @@ extractClosed <- function(rawRulesObj){
 
   output = list(closeRules = rules_closed,
                 transactions = rawRulesObj$transaction)
-  class(output) <- "dGraphAR_closeRules"
+  class(output) <- "dGraphAR_closedRules"
   return(output)
 }
