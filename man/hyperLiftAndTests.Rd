@@ -4,7 +4,7 @@
 \alias{hyperLiftAndTests}
 \title{Title}
 \usage{
-hyperLiftAndTests(closedRulesObj)
+hyperLiftAndTests(closedRulesObj, signifLevel)
 }
 \arguments{
 \item{datTrans}{An object of type transaction}

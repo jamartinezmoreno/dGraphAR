@@ -8,7 +8,7 @@
 #' @examples
 #' to be written
 #'
-hyperLiftAndTests <- function(closedRulesObj){
+hyperLiftAndTests <- function(closedRulesObj, signifLevel){
 
   dt_rules <- data.table::data.table(arules::inspect(closedRulesObj$closeRules))
 
@@ -23,9 +23,11 @@ hyperLiftAndTests <- function(closedRulesObj){
   dt_rules[, bonferrCorrected_signif:= arules::is.significant(closedRulesObj$closeRules,
                                                               transactions = closedRulesObj$transactions,
                                                               method = "fisher",
-                                                              alpha = 0.01,
+                                                              alpha = signifLevel,
                                                               adjust = "bonferroni")]
+  output = list(dt_rules = dt_rules, signifLevel = signifLevel)
+  class(output) <- "dGraphAR_hyperlifSign"
 
-  return(dt_rules)
+  return(output)
 }
 
