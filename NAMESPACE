@@ -2,6 +2,7 @@
 
 export(dGtransaction)
 export(extractClosed)
+export(filterHochbergHLift)
 export(freqItems)
 export(hyperLiftAndTests)
 export(plotFreqItems)
