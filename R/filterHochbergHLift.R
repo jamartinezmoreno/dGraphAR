@@ -20,7 +20,10 @@ filterHochbergHLift <- function(hyperlifSignObj, minHLift){
   signRules[, value_j_Hochberg:=(j_Hochberg*hyperlifSignObj$signifLevel )/n_rules, by=c("j_Hochberg")]
   signRules[, idx_Hochberg:= fisher_test_pvalue <= value_j_Hochberg, by=c("j_Hochberg")]
 
-  output <- signRules[signRules$idx_Hochberg & hyperLift >= minHLift, !c("bonferrCorrected_signif", "j_Hochberg", "idx_Hochberg"), with = FALSE]
+  filtRules <- signRules[signRules$idx_Hochberg & hyperLift >= minHLift, !c("bonferrCorrected_signif", "j_Hochberg", "idx_Hochberg"), with = FALSE]
+
+  output = list(dt_filtRules = filtRules, minHLift = minHLift, numRules = nrow(filtRules))
+  class(output) <- "dGraphAR_filtRules"
 
   return(output)
 }
