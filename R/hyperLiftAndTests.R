@@ -25,7 +25,7 @@ hyperLiftAndTests <- function(closedRulesObj, signifLevel){
                                                               method = "fisher",
                                                               alpha = signifLevel,
                                                               adjust = "bonferroni")]
-  output = list(dt_rules = dt_rules, signifLevel = signifLevel)
+  output = list(rulesSet = closedRulesObj$closeRules, dt_rulesStats = dt_rules, signifLevel = signifLevel)
   class(output) <- "dGraphAR_hyperlifSign"
 
   return(output)
