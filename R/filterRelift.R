@@ -92,7 +92,10 @@ filterRelift <- function(filtRulesObj, w){
 
   idx_withRedund <- unlist(list_rules_redund)
 
-  output <- list(dt_filtRules = filtRulesObj$dt_filtRules[!idx_withRedund],
+  rulesSetFilt = subset(filtRulesObj$rules, subset = !idx_withRedund)
+
+  output <- list(rules = rulesSetFilt,
+                 dt_filtRules = filtRulesObj$dt_filtRules[!idx_withRedund],
                  dt_redunRules = filtRulesObj$dt_filtRules[idx_withRedund],
                  redundInspect = list_pairs_redund_RR,
                  w = w)
